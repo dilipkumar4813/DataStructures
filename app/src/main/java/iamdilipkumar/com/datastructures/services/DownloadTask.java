@@ -1,4 +1,4 @@
-package iamdilipkumar.com.datastructures;
+package iamdilipkumar.com.datastructures.services;
 
 import android.os.AsyncTask;
 
@@ -8,11 +8,11 @@ import android.os.AsyncTask;
  * @author dilipkumar4813
  * @version 1.0
  */
-class DownloadTask extends AsyncTask<DownloadTask.UpdateProgress, Integer, Void> {
+public class DownloadTask extends AsyncTask<DownloadTask.UpdateProgress, Integer, Void> {
 
     private UpdateProgress updateProgress;
 
-    interface UpdateProgress {
+    public interface UpdateProgress {
         void updateProgressBar(int progress);
     }
 
