@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:permission="iamdilipkumar.com.datastructures.MainActivity">
@@ -20,6 +21,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".andrd.TestBoundService" />
+
+        <service android:name=".andrd.TestStartService" />
+
+        <receiver android:name=".andrd.TestReceiver" />
+
+        <provider
+            android:name=".andrd.TestProvider"
+            android:authorities="iamdilipkumar.com.datastructures.andrd"
+            android:exported="false" />
     </application>
 
 </manifest>
