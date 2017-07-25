@@ -26,7 +26,11 @@
 
         <service android:name=".andrd.TestStartService" />
 
-        <receiver android:name=".andrd.TestReceiver" />
+        <receiver android:name=".andrd.TestReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+            </intent-filter>
+        </receiver>
 
         <provider
             android:name=".andrd.TestProvider"

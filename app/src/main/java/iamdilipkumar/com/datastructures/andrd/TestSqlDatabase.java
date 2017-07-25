@@ -11,10 +11,19 @@ import android.database.sqlite.SQLiteOpenHelper;
  * @version 1.0
  */
 
-public class TestSqlDatabase extends SQLiteOpenHelper{
+public class TestSqlDatabase extends SQLiteOpenHelper {
 
     private final static String DATABASE_NAME = "testdatabase";
     private final static int DATABASE_VERSION = 1;
+
+    private final static String TABLE_NAME = "testtable";
+    private final static String ID = "_id";
+    private final static String NAME = "name";
+    private final static String NUMBER = "number";
+
+    private final static String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
+            + TABLE_NAME + "(" + ID + " INT PRIMARY KEY AUTOINCREMENT," + NAME +
+            " TEXT," + NUMBER + " TEXT);";
 
     public TestSqlDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -22,11 +31,11 @@ public class TestSqlDatabase extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE " + TABLE_NAME);
     }
 }
